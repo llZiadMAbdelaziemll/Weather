@@ -54,22 +54,22 @@ const Content = () => {
       // console.log(weather.hourList)
     }, [query])
      
-    // for(let i = 7 , len = weather.allHourList.length; i<len ; i+=8){
-    //           renderedItems.push(
-    //              <li className="card-item">
-    //                <div className="icon-wrapper">
-    //                  <img src={iconUrlFromCode(weather.allHourList[i].icon)} width="36" height="36" className="weather-icon" alt="" />
+    for(let i = 7 , len = weather.allHourList.length; i<len ; i+=8){
+              renderedItems.push(
+                 <li className="card-item">
+                   <div className="icon-wrapper">
+                     <img src={iconUrlFromCode(weather.allHourList[i].icon)} width="36" height="36" className="weather-icon" alt="" />
                      
-    //                  <span className="span">
-    //                    <p className="title-2">{weather.allHourList[i].temp_max}</p>
-    //                  </span>
-    //                </div>
+                     <span className="span">
+                       <p className="title-2">{weather.allHourList[i].temp_max}</p>
+                     </span>
+                   </div>
  
-    //                <p className="label-1">{weather.allHourList[i].date.getDate()}&nbsp;{monthNames[weather.allHourList[i].date.getUTCMonth()]}</p>
-    //                <p className="label-1">{weekDayNames[weather.allHourList[i].date.getUTCDay()]}</p>
-    //              </li> 
-    //           )      
-    // }
+                   <p className="label-1">{weather.allHourList[i].date.getDate()}&nbsp;{monthNames[weather.allHourList[i].date.getUTCMonth()]}</p>
+                   <p className="label-1">{weekDayNames[weather.allHourList[i].date.getUTCDay()]}</p>
+                 </li> 
+              )      
+    }
     
 
   return (
@@ -149,7 +149,7 @@ const Content = () => {
           
           {/* CURRENT WEATHER */}
 
-           {/* <section className="section current-weather" aria-label='current weather' data-current-weather>
+           <section className="section current-weather" aria-label='current weather' data-current-weather>
             <div className="card card-lg current-weather-card">
              <h2 className="title-2 card-title">{weather.name}</h2>
              <div className="weapper">
@@ -172,11 +172,11 @@ const Content = () => {
                  
                </ul>
              </div>
-           </section> */}
+           </section>
  
                {/* FORECAST */}
  
-               {/* <section className="section forecast" aria-labelledby="forecast-label" data-5-day-forecast>
+               <section className="section forecast" aria-labelledby="forecast-label" data-5-day-forecast>
              <h2 className="title-2" id="forecast-label">5 Days Forecast</h2>
  
              <div className="card card-lg forecast-card">
@@ -186,7 +186,7 @@ const Content = () => {
                </ul>
 
              </div>
-               </section> */}
+               </section>
 
            </div>
  
@@ -194,7 +194,7 @@ const Content = () => {
            <div className="content-right">
                {/* HIGHLIGHTS */}
  
-               {/* <section className="section highlights" 
+               <section className="section highlights" 
                aria-labelledby="highlights-label" data-highlights>
                   <div className="card card-lg">
                    <h2 className="title-2" id="highlights-label">Todays Highlights</h2>
@@ -314,11 +314,11 @@ const Content = () => {
 
                    </div>
                   </div>
-               </section> */}
+               </section>
  
  
                {/* HOURLY FORECAST */}
-{/*                
+               
                <section className="section hourly-forecast" aria-labelledby="hourly forecast" data-hourly-forecast>
  
                  <h2 className="title-2">Today at</h2>
@@ -568,7 +568,7 @@ const Content = () => {
 
                    </ul> 
                  </div> 
-               </section>  */}
+               </section> 
  
  
                 {/* FOOTER */}
