@@ -54,19 +54,19 @@ const Content = () => {
       // console.log(weather.hourList)
     }, [query])
      
-    for(let i = 7 , len = weather.allHourList.length; i<len ; i+=8){
+    for(let i = 7 , len = weather?.allHourList.length; i<len ; i+=8){
               renderedItems.push(
                  <li className="card-item">
                    <div className="icon-wrapper">
-                     <img src={iconUrlFromCode(weather.allHourList[i].icon)} width="36" height="36" className="weather-icon" alt="" />
+                     <img src={iconUrlFromCode(weather?.allHourList[i].icon)} width="36" height="36" className="weather-icon" alt="" />
                      
                      <span className="span">
-                       <p className="title-2">{weather.allHourList[i].temp_max}</p>
+                       <p className="title-2">{weather?.allHourList[i].temp_max}</p>
                      </span>
                    </div>
  
-                   <p className="label-1">{weather.allHourList[i].date.getDate()}&nbsp;{monthNames[weather.allHourList[i].date.getUTCMonth()]}</p>
-                   <p className="label-1">{weekDayNames[weather.allHourList[i].date.getUTCDay()]}</p>
+                   <p className="label-1">{weather?.allHourList[i].date.getDate()}&nbsp;{monthNames[weather?.allHourList[i].date.getUTCMonth()]}</p>
+                   <p className="label-1">{weekDayNames[weather?.allHourList[i].date.getUTCDay()]}</p>
                  </li> 
               )      
     }
@@ -151,23 +151,23 @@ const Content = () => {
 
            <section className="section current-weather" aria-label='current weather' data-current-weather>
             <div className="card card-lg current-weather-card">
-             <h2 className="title-2 card-title">{weather.name}</h2>
+             <h2 className="title-2 card-title">{weather?.name}</h2>
              <div className="weapper">
-                 <p className="heading">{weather.temp.toFixed()}&deg;<sup>c</sup></p>
-                 <img src={iconUrlFromCode(weather.icon)} alt="not" width="64" height="64" className="weather-icon" />
+                 <p className="heading">{weather?.temp.toFixed()}&deg;<sup>c</sup></p>
+                 <img src={iconUrlFromCode(weather?.icon)} alt="not" width="64" height="64" className="weather-icon" />
    
              </div>
-             <p className="body-3">{weather.description}</p>
+             <p className="body-3">{weather?.description}</p>
  
              <ul className="meta-list">
                <li className="meta-item">
                  <AiOutlineCalendar />
-                 <p className="title-3 meta-text mb-0">{weather.title}</p>
+                 <p className="title-3 meta-text mb-0">{weather?.title}</p>
                </li>
  
                  <li className="meta-item">
                   <CiLocationOn />
-                   <p className="title-3 meta-text mb-0">{weather.name}, {weather.country}</p>
+                   <p className="title-3 meta-text mb-0">{weather?.name}, {weather?.country}</p>
                  </li>
                  
                </ul>
@@ -209,25 +209,25 @@ const Content = () => {
                            <ul className="card-list">
  
                              <li className="card-item">
-                               <p className="title-1">{weather.airList.pm2_5}</p>
+                               <p className="title-1">{weather?.airList.pm2_5}</p>
  
                                <p className="label-1">PM<sub>2.5</sub></p>
                              </li>
  
                              <li className="card-item">
-                               <p className="title-1">{weather.airList.no2}</p>
+                               <p className="title-1">{weather?.airList.no2}</p>
  
                                <p className="label-1">o3<sub>2.5</sub></p>
                              </li>
  
                              <li className="card-item">
-                               <p className="title-1">{weather.airList.o3}</p>
+                               <p className="title-1">{weather?.airList.o3}</p>
  
                                <p className="label-1">no2<sub>2.5</sub></p>
                              </li>
  
                              <li className="card-item">
-                               <p className="title-1">{weather.airList.so2}</p>
+                               <p className="title-1">{weather?.airList.so2}</p>
  
                                <p className="label-1">so2<sub>2.5</sub></p>
                              </li>
@@ -236,7 +236,7 @@ const Content = () => {
                        </div>
                        
                        <span className="badge aqi-1 label-1" title="aqi message">
-                         {aqiText[weather.airList.aqi]}
+                         {aqiText[weather?.airList.aqi]}
                        </span>
  
                      </div>
@@ -251,7 +251,7 @@ const Content = () => {
                                 <BsSunrise className="m-icon"/>
                                <p className="label-1">Sunrise</p>
  
-                               <p className="title-1">{weather.riseTime}</p>
+                               <p className="title-1">{weather?.riseTime}</p>
                                </div>
                              </div>
  
@@ -260,7 +260,7 @@ const Content = () => {
                                 <BsSunset className="m-icon"/>
                                <p className="label-1">Sunset</p>
  
-                               <p className="title-1">{weather.setTime}</p>
+                               <p className="title-1">{weather?.setTime}</p>
                                </div>
                              </div>
  
@@ -273,7 +273,7 @@ const Content = () => {
  
                        <div className="wrapper">
                            <WiHumidity className="m-icon"/>
-                           <p className="title-1">{weather.humidity}<sub>%</sub></p>
+                           <p className="title-1">{weather?.humidity}<sub>%</sub></p>
  
                        </div>
                 
@@ -284,7 +284,7 @@ const Content = () => {
  
                        <div className="wrapper">
                            <GiPressureCooker className="m-icon" />
-                           <p className="title-1">{weather.pressure}<sub>hPa</sub></p>
+                           <p className="title-1">{weather?.pressure}<sub>hPa</sub></p>
  
                        </div>
  
@@ -295,7 +295,7 @@ const Content = () => {
  
                        <div className="wrapper">
                            <MdOutlineVisibility className="m-icon"/>
-                           <p className="title-1">{(weather.visibility)/1000}<sub>km</sub></p>
+                           <p className="title-1">{(weather?.visibility)/1000}<sub>km</sub></p>
  
                        </div>
  
@@ -306,7 +306,7 @@ const Content = () => {
  
                        <div className="wrapper">
                            <FaTemperatureLow className="m-icon"/>
-                           <p className="title-1">{weather.feels_like.toFixed()}&deg;<sup>c</sup></p>
+                           <p className="title-1">{weather?.feels_like.toFixed()}&deg;<sup>c</sup></p>
  
                        </div>
                    
@@ -330,13 +330,13 @@ const Content = () => {
                          <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[0].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[0].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[0].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[0].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[0].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[0].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -344,13 +344,13 @@ const Content = () => {
                           <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[1].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[1].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[1].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[1].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[1].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[1].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -358,13 +358,13 @@ const Content = () => {
                           <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[2].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[2].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[2].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[2].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[2].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[2].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -372,13 +372,13 @@ const Content = () => {
                           <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[3].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[3].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[3].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[3].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[3].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[3].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -386,13 +386,13 @@ const Content = () => {
                           <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[4].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[4].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[4].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[4].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[4].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[4].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -400,13 +400,13 @@ const Content = () => {
                           <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[5].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[5].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[5].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[5].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[5].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[5].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -414,13 +414,13 @@ const Content = () => {
                           <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[6].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[6].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[6].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[6].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[6].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[6].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -428,13 +428,13 @@ const Content = () => {
                           <li className="slider-item">
                             <div className="card card-sm slider-card">
 
-                              <p className="body-3">{weather.hourList[7].day_hour}</p>
+                              <p className="body-3">{weather?.hourList[7].day_hour}</p>
 
-                              <img src={iconUrlFromCode(weather.hourList[7].icon)}
+                              <img src={iconUrlFromCode(weather?.hourList[7].icon)}
                               width="48" height="48" loading="lazy" 
                               className="weather-icon" title=""/>
 
-                              <p className="body-3">{weather.hourList[7].temp}&deg;</p>
+                              <p className="body-3">{weather?.hourList[7].temp}&deg;</p>
 
                             </div>
                           </li>
@@ -447,13 +447,13 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[0].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[0].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
-                          className="weather-icon" title="" style={{transform: `rotate(${weather.hourList[0].wind_direction}deg)`}}/>
+                          className="weather-icon" title="" style={{transform: `rotate(${weather?.hourList[0].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[0].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[0].wind} km/h</p>
 
                         </div>
                         </li>
@@ -462,14 +462,14 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[1].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[1].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
                           className="weather-icon" title="" 
-                          style={{transform: `rotate(${weather.hourList[1].wind_direction}deg)`}}/>
+                          style={{transform: `rotate(${weather?.hourList[1].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[1].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[1].wind} km/h</p>
 
                         </div>
                         </li>
@@ -478,14 +478,14 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[2].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[2].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
                           className="weather-icon" title="" 
-                          style={{transform: `rotate(${weather.hourList[2].wind_direction}deg)`}}/>
+                          style={{transform: `rotate(${weather?.hourList[2].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[2].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[2].wind} km/h</p>
 
                         </div>
                         </li>
@@ -494,14 +494,14 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[3].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[3].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
                           className="weather-icon" title="" 
-                          style={{transform: `rotate(${weather.hourList[3].wind_direction}deg)`}}/>
+                          style={{transform: `rotate(${weather?.hourList[3].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[3].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[3].wind} km/h</p>
 
                         </div>
                         </li>
@@ -509,14 +509,14 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[4].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[4].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
                           className="weather-icon" title="" 
-                          style={{transform: `rotate(${weather.hourList[4].wind_direction}deg)`}}/>
+                          style={{transform: `rotate(${weather?.hourList[4].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[4].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[4].wind} km/h</p>
 
                         </div>
                         </li>
@@ -524,14 +524,14 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[5].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[5].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
                           className="weather-icon" title="" 
-                          style={{transform: `rotate(${weather.hourList[5].wind_direction}deg)`}}/>
+                          style={{transform: `rotate(${weather?.hourList[5].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[5].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[5].wind} km/h</p>
 
                         </div>
                         </li>
@@ -539,14 +539,14 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[6].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[6].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
                           className="weather-icon" title="" 
-                          style={{transform: `rotate(${weather.hourList[6].wind_direction}deg)`}}/>
+                          style={{transform: `rotate(${weather?.hourList[6].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[6].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[6].wind} km/h</p>
 
                         </div>
                         </li>
@@ -554,14 +554,14 @@ const Content = () => {
                         <li className="slider-item">
                         <div className="card card-sm slider-card">
 
-                          <p className="body-3">{weather.hourList[7].day_hour}</p>
+                          <p className="body-3">{weather?.hourList[7].day_hour}</p>
 
                           <img src="./images/weather_icons/direction.png"
                           width="48" height="48" loading="lazy" 
                           className="weather-icon" title="" 
-                          style={{transform: `rotate(${weather.hourList[7].wind_direction}deg)`}}/>
+                          style={{transform: `rotate(${weather?.hourList[7].wind_direction}deg)`}}/>
 
-                          <p className="body-3">{weather.hourList[7].wind} km/h</p>
+                          <p className="body-3">{weather?.hourList[7].wind} km/h</p>
 
                         </div>
                         </li>
